@@ -1,0 +1,58 @@
+.nav {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* animation: boxShadow 2s infinite linear; */
+}
+
+/* @keyframes boxShadow {
+  0% {
+    box-shadow: 0 4px 15px -1px rgba(0, 255, 221, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 15px -2px rgba(0, 255, 221, 0.5);
+  }
+  100% {
+    box-shadow: none;
+  }
+} */
+
+.nav h1 {
+  cursor: pointer;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  text-transform: capitalize;
+}
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: all linear 0.3s;
+}
+
+.nav ul a:hover {
+  color: var(--light-green);
+}
+
+.activeLink > a {
+  background: linear-gradient(
+    to bottom,
+    var(--light-green),
+    var(--soft-green) 30%
+  );
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 7px 15px -3px var(--soft-green);
+}
+
+.noActive > a {
+  color: #fff;
+}

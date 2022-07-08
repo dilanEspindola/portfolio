@@ -1,0 +1,187 @@
+.header > div {
+  height: 87vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.header .shape {
+  position: relative;
+}
+.header .shape::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 541px;
+  background: radial-gradient(var(--light-green) 25%, var(--soft-green));
+}
+
+.header .shape::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 300px;
+  width: 200px;
+  height: 541px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: radial-gradient(var(--light-green), var(--soft-green));
+  animation: shapeAfter 1.5s infinite ease-in-out;
+}
+@keyframes shapeAfter {
+  0% {
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 50%;
+    background: radial-gradient(
+      ellipse at top,
+      var(--light-green),
+      var(--soft-green)
+    );
+  }
+  50% {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 35%;
+    background: radial-gradient(
+      ellipse at bottom,
+      var(--light-green),
+      var(--soft-green)
+    );
+  }
+  100% {
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 50%;
+    background: radial-gradient(
+      ellipse at top,
+      var(--light-green),
+      var(--soft-green)
+    );
+  }
+}
+
+.header .shape .flash {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  top: 50%;
+  right: -70%;
+  width: 130%;
+  height: 1px;
+  background: linear-gradient(to right, var(--soft-green), var(--soft-green));
+  /* box-shadow: 0 2px 35px 10px var(--soft-green); */
+  filter: blur(4px);
+  animation: flash 1s infinite linear;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0 2px 35px 16px var(--soft-green);
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 2px 20px 5px var(--soft-green);
+  }
+}
+
+.header .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .title div {
+  z-index: 55;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header .title h1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .title h1 .name {
+  font-size: 52px;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.header .title h1 .name span:first-child {
+  color: var(--purple);
+  animation: firstname 1.5s infinite linear;
+  transition: all 0.5s linear;
+}
+.header .title h1 .name span:last-child {
+  color: var(--white);
+  animation: lastname 1.5s infinite linear;
+}
+
+@keyframes firstname {
+  0% {
+    color: var(--purple);
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    color: var(--white);
+    transform: translateY(5px);
+  }
+}
+
+@keyframes lastname {
+  from {
+    color: var(--white);
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  to {
+    color: var(--purple);
+    transform: translateY(0px);
+  }
+}
+
+.header .title h1 .profession {
+  font-size: 38px;
+  display: flex;
+  gap: 10px;
+}
+
+.header .title h1 .profession span:first-child {
+  color: var(--light-green);
+  animation: firstword 1.5s linear infinite;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+}
+.header .title h1 .profession span:last-child {
+  color: var(--light-green);
+  animation: lastword 1.5s linear infinite;
+}
+
+@keyframes firstword {
+  from {
+    color: var(--light-green);
+  }
+  to {
+    color: var(--white);
+  }
+}
+@keyframes lastword {
+  from {
+    color: var(--white);
+  }
+  to {
+    color: var(--light-green);
+  }
+}
