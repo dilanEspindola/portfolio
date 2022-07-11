@@ -16,7 +16,8 @@
   left: 0;
   width: 300px;
   height: 541px;
-  background: radial-gradient(var(--light-green) 25%, var(--soft-green));
+  background: linear-gradient(to right, var(--soft-green), var(--light-green));
+  z-index: 5;
 }
 
 .header .shape::after {
@@ -28,36 +29,22 @@
   height: 541px;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  background: radial-gradient(var(--light-green), var(--soft-green));
+  background: linear-gradient(to right, var(--light-green), var(--soft-green));
   animation: shapeAfter 1.5s infinite ease-in-out;
+  z-index: 6;
 }
 @keyframes shapeAfter {
   0% {
     border-top-right-radius: 30%;
     border-bottom-right-radius: 50%;
-    background: radial-gradient(
-      ellipse at top,
-      var(--light-green),
-      var(--soft-green)
-    );
   }
   50% {
     border-top-right-radius: 50%;
-    border-bottom-right-radius: 35%;
-    background: radial-gradient(
-      ellipse at bottom,
-      var(--light-green),
-      var(--soft-green)
-    );
+    border-bottom-right-radius: 25%;
   }
   100% {
     border-top-right-radius: 30%;
     border-bottom-right-radius: 50%;
-    background: radial-gradient(
-      ellipse at top,
-      var(--light-green),
-      var(--soft-green)
-    );
   }
 }
 
@@ -108,7 +95,7 @@
 }
 
 .header .title h1 .name {
-  font-size: 52px;
+  font-size: 60px;
   display: flex;
   gap: 10px;
   z-index: 5;
@@ -118,38 +105,20 @@
   color: var(--purple);
   animation: firstname 1.5s infinite linear;
   transition: all 0.5s linear;
+  text-shadow: 0 1px rgb(82, 2, 71), -1px 0 rgb(82, 2, 71),
+    -1px 2px rgb(82, 2, 71), -2px 1px rgb(82, 2, 71), -2px 3px rgb(82, 2, 71),
+    -3px 2px rgb(82, 2, 71), -3px 4px rgb(82, 2, 71), -4px 3px rgb(82, 2, 71),
+    -4px 5px rgb(82, 2, 71), -5px 4px rgb(82, 2, 71), -5px 6px rgb(82, 2, 71),
+    -6px 5px rgb(82, 2, 71), -6px 7px rgb(82, 2, 71), -7px 6px rgb(82, 2, 71),
+    -7px 8px rgb(82, 2, 71), -8px 7px rgb(82, 2, 71);
 }
 .header .title h1 .name span:last-child {
   color: var(--white);
   animation: lastname 1.5s infinite linear;
-}
-
-@keyframes firstname {
-  0% {
-    color: var(--purple);
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    color: var(--white);
-    transform: translateY(5px);
-  }
-}
-
-@keyframes lastname {
-  from {
-    color: var(--white);
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  to {
-    color: var(--purple);
-    transform: translateY(0px);
-  }
+  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5,
+    -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5,
+    -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5,
+    -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
 }
 
 .header .title h1 .profession {
@@ -159,29 +128,28 @@
 }
 
 .header .title h1 .profession span:first-child {
-  color: var(--light-green);
+  color: var(--white);
   animation: firstword 1.5s linear infinite;
-  animation: name duration timing-function delay iteration-count direction
-    fill-mode;
+  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5,
+    -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5,
+    -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5,
+    -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
 }
 .header .title h1 .profession span:last-child {
   color: var(--light-green);
   animation: lastword 1.5s linear infinite;
+  text-shadow: 0 1px rgb(55, 153, 167), -1px 0 rgb(55, 153, 167),
+    -1px 2px rgb(55, 153, 167), -2px 1px rgb(55, 153, 167),
+    -2px 3px rgb(55, 153, 167), -3px 2px rgb(55, 153, 167),
+    -3px 4px rgb(55, 153, 167), -4px 3px rgb(55, 153, 167),
+    -4px 5px rgb(55, 153, 167), -5px 4px rgb(55, 153, 167),
+    -5px 6px rgb(55, 153, 167), -6px 5px rgb(55, 153, 167),
+    -6px 7px rgb(55, 153, 167), -7px 6px rgb(55, 153, 167),
+    -7px 8px rgb(55, 153, 167), -8px 7px rgb(55, 153, 167);
 }
 
-@keyframes firstword {
-  from {
-    color: var(--light-green);
-  }
-  to {
-    color: var(--white);
-  }
-}
-@keyframes lastword {
-  from {
-    color: var(--white);
-  }
-  to {
-    color: var(--light-green);
+@media screen and (min-width: 320px) and (max-width: 380px) {
+  .header > div {
+    grid-template-columns: 1fr;
   }
 }

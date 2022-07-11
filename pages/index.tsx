@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import { NextPage } from "next";
 import { Layout } from "../components/Layout";
 

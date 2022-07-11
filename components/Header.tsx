@@ -11,7 +11,7 @@ export const Header = () => {
           <div className={styles.flash}></div>
         </div>
         <div className={styles.title}>
-          <div className="animate__animated animate__lightSpeedInRight">
+          <div className="animate__animated animate__zoomIn">
             <h1>
               <span className={styles.name}>
                 <span>Dilan</span>
